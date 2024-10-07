@@ -6,16 +6,16 @@ const Logo = () => {
     <Link href="/">
       <Image
         src="/logo-dark.svg"
-        width={80}
-        height={80}
+        width={100}
+        height={100}
         priority
         alt="logo"
         className="absolute scale-0 dark:scale-100"
       />
       <Image
         src="/logo-light.svg"
-        width={80}
-        height={80}
+        width={100}
+        height={100}
         priority
         alt="logo"
         className="scale-100 dark:scale-0"

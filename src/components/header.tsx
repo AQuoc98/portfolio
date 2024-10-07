@@ -7,7 +7,7 @@ import ThemeToggler from "./theme-toggler";
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-30 transition-all shadow-lg bg-background/95 backdrop-blur">
+    <header className="sticky top-0 z-30 p-2 transition-all border backdrop-blur-sm bg-background/95 border-border/40">
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
           <Logo />
