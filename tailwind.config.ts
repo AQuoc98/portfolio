@@ -58,6 +58,9 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-manrope)"],
       },
+      backgroundImage: {
+        hero_shape: "url(/hero/shape.svg)",
+      },
     },
   },
   // eslint-disable-next-line @typescript-eslint/no-require-imports
