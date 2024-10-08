@@ -30,8 +30,8 @@ const Socials = ({
   containerStyles,
   iconsStyles,
 }: {
-  containerStyles: string;
-  iconsStyles: string;
+  containerStyles?: string;
+  iconsStyles?: string;
 }) => {
   return (
     <div className={cn(containerStyles)}>

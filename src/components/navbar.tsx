@@ -16,9 +16,9 @@ const Navbar = ({
   linkStyles,
   underlineStyles,
 }: {
-  containerStyles: string;
-  linkStyles: string;
-  underlineStyles: string;
+  containerStyles?: string;
+  linkStyles?: string;
+  underlineStyles?: string;
 }) => {
   const path = usePathname();
 
