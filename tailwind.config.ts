@@ -7,6 +7,16 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+    },
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1400px",
+    },
     extend: {
       borderRadius: {
         lg: "var(--radius)",
@@ -54,9 +64,6 @@ const config: Config = {
           "4": "hsl(var(--chart-4))",
           "5": "hsl(var(--chart-5))",
         },
-      },
-      fontFamily: {
-        sans: ["var(--font-manrope)"],
       },
       backgroundImage: {
         hero_shape: "url(/hero/shape.svg)",
