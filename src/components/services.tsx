@@ -12,13 +12,13 @@ const servicesData = [
     icon: <RiVipDiamondFill className="text-6xl" />,
     title: "Web Design",
     description:
-      "I focus on creating intuitive and engaging designs that provide a seamless user experience",
+      "I focus on creating intuitive and engaging designs that provide a seamless user experience.",
   },
   {
     icon: <RiCodeBoxFill className="text-6xl" />,
     title: "Web Development",
     description:
-      "My development services include building fast, scalable, and secure websites using cutting-edge technologies. Whether you need a simple landing page or a complex web application, I deliver solutions that work across all devices.",
+      "My development services include building fast, scalable, and secure websites using cutting-edge technologies.",
   },
 ];
 const Services = () => {
