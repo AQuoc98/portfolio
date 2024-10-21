@@ -9,7 +9,7 @@ const Contact = () => {
             <span className="w-8 h-[2px] bg-primary"></span>
             Say Hello 👋
           </div>
-          <h1 className="h1 text-center">Let's Work Together.</h1>
+          <h1 className="h1 text-center">Let&apos;s Work Together.</h1>
         </div>
         <div className="flex flex-col lg:flex-row justify-center gap-x-16 gap-y-8">
           <div className="flex flex-col gap-y-4 lg:text-lg">

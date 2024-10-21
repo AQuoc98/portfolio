@@ -21,11 +21,15 @@ const ContactForm = () => {
         <RiMailFill className="text-lg absolute right-4" />
       </div>
       <div className="relative flex items-center">
-        <Textarea placeholder="Type Your Message" cols={50} className="resize-none"/>
+        <Textarea
+          placeholder="Type Your Message"
+          cols={50}
+          className="resize-none"
+        />
         <RiMessage2Fill className="text-lg absolute top-4 right-4" />
       </div>
       <Button className="flex items-center gap-x-1 lg:max-w-32">
-        Let's Talk
+        Let&apos;s Talk
         <RiArrowRightLine className="text-lg" />
       </Button>
     </form>
