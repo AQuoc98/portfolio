@@ -4,7 +4,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@components/ui/sheet";
-import { RxHamburgerMenu } from "react-icons/rx";
+import { RiMenuFill } from "react-icons/ri";
 import Navbar from "./navbar";
 import Socials from "./socials";
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
@@ -12,9 +12,9 @@ import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 const MobileNavbar = () => {
   return (
     <Sheet>
-      <SheetTrigger asChild>
+      <SheetTrigger asChild className="lg:hidden">
         <div>
-          <RxHamburgerMenu className="text-xl" />
+          <RiMenuFill className="text-2xl" />
         </div>
       </SheetTrigger>
       <SheetContent aria-describedby={undefined}>
@@ -22,13 +22,11 @@ const MobileNavbar = () => {
           <VisuallyHidden.Root>Hide Sheet Title</VisuallyHidden.Root>
         </SheetTitle>
         <div className="flex flex-col items-center justify-between h-full py-8">
-          <div className="flex flex-col items-center gap-y-32">
-            <Navbar
-              containerStyles="flex flex-col items-center gap-y-6"
-              linkStyles="text-2xl"
-            />
-          </div>
-          <Socials containerStyles="flex gap-x-4" iconsStyles="text-2xl" />
+          <Navbar
+            containerStyles="flex flex-col items-center gap-y-6"
+            linkStyles="text-2xl"
+          />
+          <Socials containerStyles="flex gap-x-4" />
         </div>
       </SheetContent>
     </Sheet>

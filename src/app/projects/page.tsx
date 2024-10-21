@@ -3,87 +3,43 @@
 import ProjectCard from "@/components/project-card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useState } from "react";
+import commonData from "@lib/json/commonData.json";
 
-const projectData = [
-  {
-    image: "/work/sweetpotato.png",
-    category: "static website",
-    name: "Sweet Potato Website",
-    description:
-      "Landing Page introducing handmade products, especially Scrunchies from Lang",
-    link: "https://sweetpotatoplanet.vercel.app/",
-  },
-  {
-    image: "/work/sweetpotato.png",
-    category: "static website",
-    name: "Sweet Potato Website",
-    description:
-      "Landing Page introducing handmade products, especially Scrunchies from Lang",
-    link: "https://sweetpotatoplanet.vercel.app/",
-  },
-  {
-    image: "/work/sweetpotato.png",
-    category: "static website",
-    name: "Sweet Potato Website",
-    description:
-      "Landing Page introducing handmade products, especially Scrunchies from Lang",
-    link: "https://sweetpotatoplanet.vercel.app/",
-  },
-  {
-    image: "/work/sweetpotato.png",
-    category: "static website",
-    name: "Sweet Potato Website",
-    description:
-      "Landing Page introducing handmade products, especially Scrunchies from Lang",
-    link: "https://sweetpotatoplanet.vercel.app/",
-  },
-  {
-    image: "/work/sweetpotato.png",
-    category: "static website",
-    name: "Sweet Potato Website",
-    description:
-      "Landing Page introducing handmade products, especially Scrunchies from Lang",
-    link: "https://sweetpotatoplanet.vercel.app/",
-  },
-];
+const { projectCategories, projectData } = commonData;
 
 const uniqueCategories = [
-  "all projects",
-  ...new Set(projectData.map((item) => item.category)),
+  { value: "all", name: "All Projects" },
+  ...projectCategories,
 ];
 
 const Projects = () => {
-  const [categories, setCategories] = useState(uniqueCategories);
-  const [category, setCategory] = useState("all projects");
+  const [category, setCategory] = useState(uniqueCategories[0].value);
 
   const filteredProjects = projectData.filter((project) => {
-    return category === "all projects"
-      ? project
-      : project.category === category;
+    return category === "all" ? project : project.category === category;
   });
 
   return (
-    <section className="min-h-screen pt-12">
-      <div className="container mx-auto">
-        <h2 className="section-title mb-8 xl:mb-16 text-center mx-auto">
-          My Projects
-        </h2>
-        <Tabs defaultValue={category} className="mb-24 xl:mb-48">
-          <TabsList className="w-full h-full grid md:grid-cols-4 lg:max-w-[640px] mb-12 mx-auto md:border dark:border-none">
-            {categories.map((category, index) => {
+    <section className="mt-36 mb-8">
+      <div className="container mx-auto flex flex-col gap-8">
+        <h2 className="section-title">My Projects</h2>
+        <Tabs defaultValue={category} className="flex flex-col items-center">
+          <TabsList className="lg:border w-96 grid lg:grid-cols-3 gap-2">
+            {uniqueCategories.map((category, index) => {
+              const { value, name } = category;
               return (
                 <TabsTrigger
-                  onClick={() => setCategory(category)}
+                  onClick={() => setCategory(value)}
                   key={index}
-                  value={category}
-                  className="capitalize w-[162px] md:w-auto"
+                  value={value}
+                  className="w-40 lg:w-auto"
                 >
-                  {category}
+                  {name}
                 </TabsTrigger>
               );
             })}
           </TabsList>
-          <div className="text-lg xl:mt-8 grid grid-cols-1 lg:grid-cols-3 gap-4">
+          <div className="mt-8 grid lg:grid-cols-3 gap-4">
             {filteredProjects.map((project, index) => {
               return (
                 <TabsContent key={index} value={category}>

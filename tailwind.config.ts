@@ -8,15 +8,14 @@ const config: Config = {
   ],
   theme: {
     container: {
-      center: true,
       padding: "2rem",
     },
-    screens: {
-      sm: "640px",
-      md: "768px",
-      lg: "1024px",
-      xl: "1400px",
-    },
+    // screens: {
+    //   sm: "640px",
+    //   md: "768px",
+    //   lg: "1024px",
+    //   xl: "1400px",
+    // },
     extend: {
       borderRadius: {
         lg: "var(--radius)",
@@ -67,10 +66,7 @@ const config: Config = {
       },
       backgroundImage: {
         hero_shape: "url(/hero/shape.svg)",
-        hero_shape2_light: "url(/hero/shape-2-light.svg)",
-        hero_shape2_dark: "url(/hero/shape-2-dark.svg)",
-        contact_illustration_light: "url(/contact/illustration-light.svg)",
-        contact_illustration_dark: "url(/contact/illustration-dark.svg)",
+        hero_shape2: "url(/hero/shape-2.svg)",
       },
     },
   },

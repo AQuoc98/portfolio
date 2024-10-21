@@ -1,14 +1,13 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 
 const links = [
-  { path: "/", name: "home" },
-  { path: "/projects", name: "my projects" },
-  { path: "/contact", name: "contact" },
+  { path: "/", name: "Home" },
+  { path: "/projects", name: "My Projects" },
+  { path: "/contact", name: "Contact" },
 ];
 
 const Navbar = ({
@@ -26,15 +25,9 @@ const Navbar = ({
     <nav className={containerStyles}>
       {links.map((link, index) => {
         return (
-          <Link
-            href={link.path}
-            key={index}
-            className={cn("capitalize", linkStyles)}
-          >
+          <Link href={link.path} key={index} className={linkStyles}>
             {link.path === path && (
               <motion.span
-                initial={{ y: "-100%" }}
-                animate={{ y: 0 }}
                 transition={{ type: "tween" }}
                 layoutId="underline"
                 className={underlineStyles}

@@ -59,18 +59,8 @@
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply font-sans bg-background text-foreground;
-  }
-}
-
 .h1 {
-  @apply text-6xl xl:text-[72px] xl:leading-[80px] tracking-[-2px] font-bold;
+  @apply text-6xl font-bold;
 }
 
 .h2 {
@@ -82,15 +72,15 @@
 }
 
 .h4 {
-  @apply text-[22px] font-semibold;
+  @apply text-2xl font-semibold;
 }
 
 .subtitle {
-  @apply mb-8 text-lg font-light text-muted-foreground;
+  @apply text-lg font-light text-muted-foreground;
 }
 
 .section-title {
-  @apply text-4xl font-bold relative w-max flex items-center justify-between;
+  @apply text-4xl font-bold text-center;
 }
 
 .swiper-horizontal > .section-pagination-bullets .swiper-pagination-bullet,

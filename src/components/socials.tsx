@@ -34,11 +34,11 @@ const Socials = ({
   iconsStyles?: string;
 }) => {
   return (
-    <div className={cn(containerStyles)}>
+    <div className={containerStyles}>
       {icons.map((icon, index) => {
         return (
           <Link href={icon.path} key={index}>
-            <div className={cn(iconsStyles)}>{icon.name}</div>
+            <div className={cn("text-3xl", iconsStyles)}>{icon.name}</div>
           </Link>
         );
       })}

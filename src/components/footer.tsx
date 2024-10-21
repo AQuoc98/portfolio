@@ -2,16 +2,13 @@ import Socials from "./socials";
 
 const Footer = () => {
   return (
-    <footer className="py-12">
+    <footer className="py-8">
       <div className="container mx-auto">
-        <div className="flex flex-col items-center justify-between">
-          <Socials
-            containerStyles="flex gap-x-6 mx-auto xl:mx-0 mb-4"
-            iconsStyles="text-xl"
-          />
-          <div className="text-muted-foreground">
+        <div className="flex flex-col items-center justify-between gap-4">
+          <Socials containerStyles="flex gap-x-6" />
+          <p className="text-muted-foreground">
             Copyright &copy; Ken. All rights reserved.
-          </div>
+          </p>
         </div>
       </div>
     </footer>

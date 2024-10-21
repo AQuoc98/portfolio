@@ -5,7 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
-import { RiVipDiamondFill, RiCodeBoxFill } from "react-icons/ri";
+import { RiVipDiamondFill, RiApps2Fill } from "react-icons/ri";
 
 const servicesData = [
   {
@@ -15,30 +15,26 @@ const servicesData = [
       "I focus on creating intuitive and engaging designs that provide a seamless user experience.",
   },
   {
-    icon: <RiCodeBoxFill className="text-6xl" />,
-    title: "Web Development",
+    icon: <RiApps2Fill className="text-6xl" />,
+    title: "Web/App Development",
     description:
-      "My development services include building fast, scalable, and secure websites using cutting-edge technologies.",
+      "My development services include building fast, scalable, and secure products using cutting-edge technologies.",
   },
 ];
 const Services = () => {
   return (
-    <section className="mb-12 xl:mb-36">
+    <section className="mb-16">
       <div className="container mx-auto">
-        <h2 className="section-title mb-12 xl:mb-24 text-center mx-auto">
-          My Services
-        </h2>
-        <div className="grid xl:grid-cols-2 justify-center gap-y-12 xl:gap-y-24 xl:gap-x-8">
+        <h2 className="section-title mb-16">My Services</h2>
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-16">
           {servicesData.map((item, index) => {
             return (
               <Card
-                className="w-full max-w-[424px] h-[300px] flex flex-col pt-16 pb-10 justify-center items-center relative"
+                className="w-full max-w-md h-72 relative flex flex-col justify-center items-center"
                 key={index}
               >
-                <CardHeader className="text-primary absolute -top-[60px]">
-                  <div className="w-[140px] h-[80px] bg-background flex justify-center items-center">
-                    {item.icon}
-                  </div>
+                <CardHeader className="absolute -top-14 bg-background">
+                  {item.icon}
                 </CardHeader>
                 <CardContent className="text-center">
                   <CardTitle className="mb-4 text-2xl">{item.title}</CardTitle>
