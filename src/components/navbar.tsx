@@ -14,10 +14,12 @@ const Navbar = ({
   containerStyles,
   linkStyles,
   underlineStyles,
+  handleCloseMobileNavBar,
 }: {
   containerStyles?: string;
   linkStyles?: string;
   underlineStyles?: string;
+  handleCloseMobileNavBar?: () => void;
 }) => {
   const path = usePathname();
 
@@ -25,7 +27,12 @@ const Navbar = ({
     <nav className={containerStyles}>
       {links.map((link, index) => {
         return (
-          <Link href={link.path} key={index} className={linkStyles}>
+          <Link
+            href={link.path}
+            key={index}
+            className={linkStyles}
+            onClick={handleCloseMobileNavBar}
+          >
             {link.path === path && (
               <motion.span
                 transition={{ type: "tween" }}

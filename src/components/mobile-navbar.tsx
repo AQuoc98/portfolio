@@ -8,10 +8,13 @@ import { RiMenuFill } from "react-icons/ri";
 import Navbar from "./navbar";
 import Socials from "./socials";
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
+import { useState } from "react";
 
 const MobileNavbar = () => {
+  const [open, setOpen] = useState(false);
+
   return (
-    <Sheet>
+    <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild className="lg:hidden">
         <div>
           <RiMenuFill className="text-2xl" />
@@ -25,6 +28,7 @@ const MobileNavbar = () => {
           <Navbar
             containerStyles="flex flex-col items-center gap-y-6"
             linkStyles="text-2xl"
+            handleCloseMobileNavBar={() => setOpen(false)}
           />
           <Socials containerStyles="flex gap-x-4" />
         </div>
