@@ -1,10 +1,11 @@
-import Footer from "@/components/footer";
-import Header from "@/components/header";
-import { ThemeProvider } from "@/components/theme-provider";
+import Footer from "@components/footer";
+import Header from "@components/header";
+import { ThemeProvider } from "@components/theme-provider";
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
-import { cn } from "@/lib/utils";
+import { cn } from "@lib/utils";
+import { Toaster } from "@components/ui/toaster";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -22,11 +23,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn(outfit.className, 'bg-background')}>
+      <body className={cn(outfit.className, "bg-background")}>
         <ThemeProvider attribute="class" defaultTheme="light">
           <Header />
           {children}
           <Footer />
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

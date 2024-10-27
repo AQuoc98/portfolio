@@ -1,7 +1,7 @@
 "use client";
 
-import ProjectCard from "@/components/project-card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import ProjectCard from "@components/project-card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@components/ui/tabs";
 import { useState } from "react";
 import commonData from "@lib/json/commonData.json";
 

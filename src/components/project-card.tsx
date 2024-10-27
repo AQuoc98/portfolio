@@ -3,7 +3,7 @@ import { Badge } from "./ui/badge";
 import { Card, CardHeader } from "./ui/card";
 import Link from "next/link";
 import { RiLink } from "react-icons/ri";
-import { Project } from "@/lib/types/project";
+import { Project } from "@lib/types/project";
 import commonData from "@lib/json/commonData.json";
 
 type ProjectCardProps = {

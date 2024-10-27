@@ -1,4 +1,4 @@
-import ContactForm from "@/components/contact-form";
+import ContactForm from "@components/contact-form";
 import { RiMailFill, RiPhoneFill } from "react-icons/ri";
 const Contact = () => {
   return (
