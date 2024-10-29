@@ -6,6 +6,7 @@ import { Outfit } from "next/font/google";
 import "./globals.css";
 import { cn } from "@lib/utils";
 import { Toaster } from "@components/ui/toaster";
+import Script from "next/script";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -23,6 +24,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Google tag (gtag.js) */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-LVSSN60BWF"
+        ></Script>
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-LVSSN60BWF');
+          `}
+        </Script>
+      </head>
       <body className={cn(outfit.className, "bg-background")}>
         <ThemeProvider attribute="class" defaultTheme="light">
           <Header />
