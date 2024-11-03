@@ -23,8 +23,8 @@
             "image": "/work/date-with-me.png",
             "category": "0",
             "name": "Date With Me",
-            "description": "Create the perfect date in just a few simple steps - In Development",
-            "link": "/"
+            "description": "Create the perfect date in just a few simple steps",
+            "link": "https://datewithme.vercel.app/"
         }
     ]
 }
