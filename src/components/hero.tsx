@@ -1,13 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import {
   RiDownloadFill,
-  RiSendPlaneFill,
-  RiArrowDropDownLine,
+  RiSendPlaneFill
 } from "react-icons/ri";
-import Link from "next/link";
-import { Button } from "./ui/button";
 import Socials from "./socials";
+import { Button } from "./ui/button";
 
 const Hero = () => {
   const handleDownloadCV = () => {
@@ -57,9 +56,6 @@ const Hero = () => {
             <div className="bg-hero_shape2 w-[500px] h-[500px] bg-no-repeat absolute -top-1 -right-2"></div>
             <div className="bg-hero_shape w-[510px] h-[462px] bg-no-repeat relative"></div>
           </div>
-        </div>
-        <div className="absolute left-2/4 bottom-0 hidden lg:flex animate-bounce">
-          <RiArrowDropDownLine className="text-3xl" />
         </div>
       </div>
     </section>

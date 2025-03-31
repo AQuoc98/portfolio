@@ -10,7 +10,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { useRef, useState } from "react";
-import { useToast } from "@hooks/use-toast";
+import { useToast } from "@hooks/useToast";
 
 const ContactForm = () => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -59,7 +59,7 @@ const ContactForm = () => {
   return (
     <form
       ref={formRef}
-      className="flex flex-col gap-y-4 lg:w-[500px]"
+      className="flex flex-col gap-y-4 md:w-[500px]"
       onSubmit={handleSubmitForm}
     >
       <div className="relative flex items-center">
@@ -81,7 +81,7 @@ const ContactForm = () => {
         <RiMessage2Fill className="text-lg absolute top-4 right-4" />
       </div>
       <Button
-        className="flex items-center gap-x-1 lg:max-w-32"
+        className="flex items-center gap-x-1 md:max-w-32"
         type="submit"
         disabled={isSubmitting}
       >

@@ -24,9 +24,9 @@ const servicesData = [
 const Services = () => {
   return (
     <section className="mb-16">
-      <div className="container mx-auto">
-        <h2 className="section-title mb-16">My Services</h2>
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-16">
+      <div className="container mx-auto flex flex-col gap-16 md:gap-8">
+        <h2 className="section-title">My Services</h2>
+        <div className="flex flex-col md:flex-row items-center justify-center gap-16">
           {servicesData.map((item, index) => {
             return (
               <Card

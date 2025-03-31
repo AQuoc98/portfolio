@@ -3,7 +3,7 @@ import Cta from "@components/cta";
 import Hero from "@components/hero";
 // import Reviews from "@components/reviews";
 import Services from "@components/services";
-import Work from "@components/work";
+import LatestProject from "@components/project/latest-project";
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
       <Hero />
       <About />
       <Services />
-      <Work />
+      <LatestProject />
       {/* <Reviews /> */}
       <Cta />
     </>

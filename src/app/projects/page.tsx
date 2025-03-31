@@ -1,53 +1,58 @@
 "use client";
 
-import ProjectCard from "@components/project-card";
+import ProjectCard from "@components/project/project-card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@components/ui/tabs";
+import { PROJECT_CATEGORIES, PROJECT_DATA } from "@lib/constants";
+import { cn } from "@lib/utils";
 import { useState } from "react";
-import commonData from "@lib/json/commonData.json";
-
-const { projectCategories, projectData } = commonData;
-
-const uniqueCategories = [
-  { value: "all", name: "All Projects" },
-  ...projectCategories,
-];
 
 const Projects = () => {
-  const [category, setCategory] = useState(uniqueCategories[0].value);
+  const [selectedCategory, setSelectedCategory] = useState("all");
 
-  const filteredProjects = projectData.filter((project) => {
-    return category === "all" ? project : project.category === category;
-  });
+  const filteredProjects =
+    selectedCategory === "all"
+      ? PROJECT_DATA
+      : PROJECT_DATA.filter((project) =>
+          project.category.includes(selectedCategory),
+        );
 
   return (
     <section className="mt-36 mb-8">
       <div className="container mx-auto flex flex-col gap-8">
         <h2 className="section-title">My Projects</h2>
-        <Tabs defaultValue={category} className="flex flex-col items-center">
-          <TabsList className="lg:border w-96 grid lg:grid-cols-3 gap-2">
-            {uniqueCategories.map((category, index) => {
+        <Tabs
+          defaultValue={selectedCategory}
+          className="flex flex-col items-center gap-8"
+        >
+          <TabsList className="md:border w-96 grid md:grid-cols-3 gap-2">
+            {PROJECT_CATEGORIES.map((category, index) => {
               const { value, name } = category;
               return (
                 <TabsTrigger
-                  onClick={() => setCategory(value)}
+                  onClick={() => setSelectedCategory(value)}
                   key={index}
                   value={value}
-                  className="w-40 lg:w-auto"
+                  className="w-40 md:w-auto"
                 >
                   {name}
                 </TabsTrigger>
               );
             })}
           </TabsList>
-          <div className="mt-8 grid lg:grid-cols-3 gap-4">
-            {filteredProjects.map((project, index) => {
-              return (
-                <TabsContent key={index} value={category}>
-                  <ProjectCard project={project} />
-                </TabsContent>
-              );
+          <TabsContent
+            value={selectedCategory}
+            className={cn("grid md:grid-cols-3 gap-4", {
+              "md:grid-cols-1": !filteredProjects.length,
             })}
-          </div>
+          >
+            {filteredProjects.length ? (
+              filteredProjects.map((project, index) => {
+                return <ProjectCard project={project} key={index} />;
+              })
+            ) : (
+              <p>No projects found</p>
+            )}
+          </TabsContent>
         </Tabs>
       </div>
     </section>
