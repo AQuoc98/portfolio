@@ -100,14 +100,17 @@ export const SKILL_DATA = [
     name: "HTML, CSS, Javascript, Typescript",
   },
   {
-    name: "React, Next.js, Angular",
+    name: "React, Next.js",
   },
   {
     name: "Flutter, Dart",
   },
   {
-    name: "SASS, Tailwindcss, Shadcn/ui, Radix, MUI, Bootstrap, React Bootstrap, Chakra UI",
+    name: "Sass/SCSS, Bootstrap, React Bootstrap, MUI, Tailwindcss, Shadcn/ui, Radix",
   },
+  {
+    name: "Git"
+  }
 ];
 
 export const TOOL_DATA = [
