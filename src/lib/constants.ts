@@ -109,8 +109,8 @@ export const SKILL_DATA = [
     name: "Sass/SCSS, Bootstrap, React Bootstrap, MUI, Tailwindcss, Shadcn/ui, Radix",
   },
   {
-    name: "Git"
-  }
+    name: "Git",
+  },
 ];
 
 export const TOOL_DATA = [
@@ -137,6 +137,15 @@ export const TOOL_DATA = [
 export const PROJECT_DATA = [
   {
     value: 0,
+    image: "/work/word-mate.png",
+    category: ["website"],
+    name: "Word Mate",
+    description:
+      "Challenge your vocabulary with exciting games. Supports English and Vietnamese. Learn and have fun every day!",
+    link: "https://word-mate.vercel.app/",
+  },
+  {
+    value: 1,
     image: "/work/sweetpotato.png",
     category: ["website"],
     name: "Sweet Potato",
@@ -145,7 +154,7 @@ export const PROJECT_DATA = [
     link: "https://sweetpotatoplanet.vercel.app/",
   },
   {
-    value: 1,
+    value: 2,
     image: "/work/ninequiz.png",
     category: ["website"],
     name: "Quiz",
@@ -154,7 +163,7 @@ export const PROJECT_DATA = [
     link: "https://ninequiz.com/",
   },
   {
-    value: 2,
+    value: 3,
     image: "/work/blueprint.png",
     category: ["website"],
     name: "Blueprint",
