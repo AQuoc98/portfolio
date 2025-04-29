@@ -142,7 +142,7 @@ export const PROJECT_DATA = [
     name: "Word Mate",
     description:
       "Challenge your vocabulary with exciting games. Supports English and Vietnamese. Learn and have fun every day!",
-    link: "https://word-mate.vercel.app/",
+    link: "https://www.word-mate.com/",
   },
   {
     value: 1,
