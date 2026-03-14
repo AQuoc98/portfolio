@@ -15,7 +15,10 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
     <Card className="group relative overflow-hidden lg:h-full">
       <CardHeader className="p-0">
-        <div className="relative w-full h-80 flex items-center justify-center overflow-hidden">
+        <div
+          className="relative w-full h-80 flex items-center justify-center overflow-hidden cursor-pointer"
+          onClick={() => router.push(project.link)}
+        >
           <Image
             className="object-cover shadow-2xl"
             src={project.image}
@@ -24,7 +27,6 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             height={250}
             style={{ width: "auto", height: "auto" }}
             priority
-            onClick={() => router.push(project.link)}
           />
           <div className="hidden w-14 h-14 lg:flex justify-center items-center absolute bg-primary rounded-full scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-200">
             <RiLink className="text-secondary" />
