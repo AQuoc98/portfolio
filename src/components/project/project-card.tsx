@@ -1,11 +1,10 @@
 import { getProjectCategoryNames } from "@lib/fns";
 import { Project } from "@lib/types/common";
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { RiLink } from "react-icons/ri";
 import { Badge } from "../ui/badge";
 import { Card, CardHeader } from "../ui/card";
-import { useRouter } from "next/navigation";
 
 type ProjectCardProps = {
   project: Project;
