@@ -1,9 +1,13 @@
 import { PROJECT_CATEGORIES } from "./constants";
-import { IProject } from "./types/project";
+import type { Project } from "./types/common";
 
-export const getProjectCategoryNames = (project: IProject) => {
+export const getProjectCategoryNames = (project: Project) => {
+  const categoryNameMap = new Map(
+    PROJECT_CATEGORIES.map((c) => [c.value, c.name]),
+  );
+
   return project.category
-    .map((cat) => PROJECT_CATEGORIES.find((c) => c.value === cat)?.name)
-    .filter(Boolean)
+    .map((cat) => categoryNameMap.get(cat))
+    .filter((name): name is string => name !== undefined)
     .join(", ");
 };

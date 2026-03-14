@@ -1,10 +1,4 @@
-import {
-  FaBitbucket,
-  FaFigma,
-  FaGitAlt,
-  FaGithub,
-  FaJira,
-} from "react-icons/fa6";
+import { FaBitbucket, FaFigma, FaGitAlt, FaJira } from "react-icons/fa6";
 import {
   RiCalendar2Fill,
   RiGraduationCapFill,
@@ -14,13 +8,15 @@ import {
   RiUser3Fill,
 } from "react-icons/ri";
 import { VscVscode } from "react-icons/vsc";
-
-export const INFORMATION_TITLE = {
-  EDUCATION: "education",
-  EXPERIENCE: "experience",
-  SKILLS: "skills",
-  TOOLS: "tools",
-};
+import type {
+  CategoryItem,
+  EducationItem,
+  ExperienceItem,
+  PersonalItem,
+  Project,
+  SkillItem,
+  ToolItem,
+} from "./types/common";
 
 export const PERSONAL_DATA = [
   {
@@ -47,7 +43,7 @@ export const PERSONAL_DATA = [
     icon: RiHome2Fill,
     text: "Nha Trang, Viet Nam",
   },
-];
+] satisfies PersonalItem[];
 
 export const EDUCATION_DATA = [
   {
@@ -75,12 +71,12 @@ export const EDUCATION_DATA = [
     qualification: "Fullstack MERN",
     years: "2019",
   },
-];
+] satisfies EducationItem[];
 
 export const EXPERIENCE_DATA = [
   {
     company: "Simpson Strong-tie Vietnam",
-    role: "Senior Software Developer",
+    role: "UX Engineer",
     years: "03/2022 - Current",
   },
   {
@@ -93,7 +89,7 @@ export const EXPERIENCE_DATA = [
     role: "Fresher Front-end Developer",
     years: "01/2020 - 12/2020",
   },
-];
+] satisfies ExperienceItem[];
 
 export const SKILL_DATA = [
   {
@@ -103,15 +99,18 @@ export const SKILL_DATA = [
     name: "React, Next.js",
   },
   {
-    name: "Flutter, Dart",
+    name: "Zustand, Redux",
   },
   {
-    name: "Sass/SCSS, Bootstrap, React Bootstrap, MUI, Tailwindcss, Shadcn/ui, Radix",
+    name: "Sass/SCSS, Bootstrap, MUI, Tailwindcss, Shadcn/ui",
   },
   {
-    name: "Git",
+    name: "React Hook Form, Yup, Zod",
   },
-];
+  {
+    name: "Git, AI Coding",
+  },
+] satisfies SkillItem[];
 
 export const TOOL_DATA = [
   {
@@ -119,9 +118,6 @@ export const TOOL_DATA = [
   },
   {
     icon: FaGitAlt,
-  },
-  {
-    icon: FaGithub,
   },
   {
     icon: FaBitbucket,
@@ -132,12 +128,12 @@ export const TOOL_DATA = [
   {
     icon: FaFigma,
   },
-];
+] satisfies ToolItem[];
 
 export const PROJECT_DATA = [
   {
-    value: 0,
-    image: "/work/word-mate.png",
+    id: 0,
+    image: "/work/word-mate.webp",
     category: ["website"],
     name: "Word Mate",
     description:
@@ -145,17 +141,17 @@ export const PROJECT_DATA = [
     link: "https://www.word-mate.com/",
   },
   {
-    value: 1,
-    image: "/work/sweetpotato.png",
+    id: 1,
+    image: "/work/sweetpotato.webp",
     category: ["website"],
     name: "Sweet Potato",
     description:
       "Landing Page introducing handmade products, especially Scrunchies from Lang",
-    link: "https://sweetpotatoplanet.vercel.app/",
+    link: "https://langpotato.netlify.app/",
   },
   {
-    value: 2,
-    image: "/work/ninequiz.png",
+    id: 2,
+    image: "/work/ninequiz.webp",
     category: ["website"],
     name: "Quiz",
     description:
@@ -163,15 +159,15 @@ export const PROJECT_DATA = [
     link: "https://ninequiz.com/",
   },
   {
-    value: 3,
-    image: "/work/blueprint.png",
+    id: 3,
+    image: "/work/blueprint.webp",
     category: ["website"],
     name: "Blueprint",
     description:
       "Find and explore all the high-quality structural solutions from Simpson Strong-Tie.",
     link: "https://app.strongtie.com/fd/",
   },
-];
+] satisfies Project[];
 
 export const PROJECT_CATEGORIES = [
   {
@@ -186,4 +182,4 @@ export const PROJECT_CATEGORIES = [
     value: "mobileApp",
     name: "Mobile App",
   },
-];
+] satisfies CategoryItem[];

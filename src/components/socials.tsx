@@ -1,4 +1,4 @@
-import { cn } from "@lib/utils";
+import type { SocialLink } from "@lib/types/common";
 import Link from "next/link";
 import {
   RiFacebookFill,
@@ -7,38 +7,33 @@ import {
   RiTwitterXFill,
 } from "react-icons/ri";
 
-const icons = [
-  {
-    path: "https://github.com/AQuoc98",
-    name: <RiGithubFill />,
-  },
+const SOCIAL_LINKS: SocialLink[] = [
+  { path: "https://github.com/AQuoc98", icon: RiGithubFill, label: "GitHub" },
   {
     path: "https://x.com/QuocNguyen3398",
-    name: <RiTwitterXFill />,
+    icon: RiTwitterXFill,
+    label: "Twitter / X",
   },
   {
     path: "https://www.linkedin.com/in/quoc-nguyen-k3398/",
-    name: <RiLinkedinFill />,
+    icon: RiLinkedinFill,
+    label: "LinkedIn",
   },
   {
     path: "https://www.facebook.com/anhquoc.nguyen.3398/",
-    name: <RiFacebookFill />,
+    icon: RiFacebookFill,
+    label: "Facebook",
   },
 ];
 
-const Socials = ({
-  containerStyles,
-  iconsStyles,
-}: {
-  containerStyles?: string;
-  iconsStyles?: string;
-}) => {
+const Socials = () => {
   return (
-    <div className={containerStyles}>
-      {icons.map((icon, index) => {
+    <div className="flex items-center gap-6">
+      {SOCIAL_LINKS.map((social) => {
+        const Icon = social.icon;
         return (
-          <Link href={icon.path} key={index}>
-            <div className={cn("text-3xl", iconsStyles)}>{icon.name}</div>
+          <Link href={social.path} key={social.label} aria-label={social.label}>
+            <Icon size={32} />
           </Link>
         );
       })}

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 
 const variants = {
   hidden: { opacity: 0 },
@@ -9,6 +9,10 @@ const variants = {
 };
 
 const Template = ({ children }: { children: ReactNode }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <motion.main
       variants={variants}

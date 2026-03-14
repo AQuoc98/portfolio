@@ -2,6 +2,16 @@ import { NextResponse } from "next/server";
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const nodemailer = require("nodemailer");
 
+// Escape HTML entities to prevent XSS in email body
+function escapeHtml(unsafe: unknown): string {
+  return String(unsafe ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
 export async function POST(req: Request) {
   const formData = await req.formData();
   const name = formData.get("name");
@@ -21,11 +31,11 @@ export async function POST(req: Request) {
   try {
     await transporter.sendMail({
       to: process.env.EMAIL_USERNAME,
-      subject: `Bio Contact`,
+      subject: `Portfolio Contact`,
       html: `
-        <p>User Name: ${name} </p>
-        <p>User Email: ${email} </p>
-        <p>User Message: ${message} </p>
+        <p>User Name: ${escapeHtml(name)} </p>
+        <p>User Email: ${escapeHtml(email)} </p>
+        <p>User Message: ${escapeHtml(message)} </p>
         `,
     });
 

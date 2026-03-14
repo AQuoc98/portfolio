@@ -10,11 +10,10 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { useRef, useState } from "react";
-import { useToast } from "@hooks/useToast";
+import { toast } from "sonner";
 
 const ContactForm = () => {
   const formRef = useRef<HTMLFormElement>(null);
-  const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleResetForm = () => {
@@ -41,25 +40,21 @@ const ContactForm = () => {
       });
 
       if (!response.ok) {
-        console.log("falling over");
         throw new Error(`response status: ${response.status}`);
       }
 
-      setTimeout(() => {
-        toast({
-          description: "Your message has been sent.",
-        });
-        setIsSubmitting(false);
-      }, 5000);
+      toast.success("Your message has been sent.");
+      setIsSubmitting(false);
     } catch {
-      alert("Error, please try resubmitting the form");
+      toast.error("Something went wrong. Please try again.");
+      setIsSubmitting(false);
     }
   };
 
   return (
     <form
       ref={formRef}
-      className="flex flex-col gap-y-4 md:w-[500px]"
+      className="flex flex-col gap-4"
       onSubmit={handleSubmitForm}
     >
       <div className="relative flex items-center">
@@ -81,7 +76,7 @@ const ContactForm = () => {
         <RiMessage2Fill className="text-lg absolute top-4 right-4" />
       </div>
       <Button
-        className="flex items-center gap-x-1 md:max-w-32"
+        className="lg:max-w-32 lg:self-end"
         type="submit"
         disabled={isSubmitting}
       >

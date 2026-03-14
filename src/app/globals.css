@@ -105,25 +105,25 @@
   padding-inline: 2rem;
 }
 
-@utility h1 {
+@utility heading-xxl {
   font-size: var(--text-6xl);
   line-height: var(--tw-leading, var(--text-6xl--line-height));
   font-weight: 700;
 }
 
-@utility h2 {
+@utility heading-xl {
   font-size: var(--text-4xl);
   line-height: var(--tw-leading, var(--text-4xl--line-height));
   font-weight: 700;
 }
 
-@utility h3 {
+@utility heading-lg {
   font-size: var(--text-3xl);
   line-height: var(--tw-leading, var(--text-3xl--line-height));
   font-weight: 700;
 }
 
-@utility h4 {
+@utility heading-md {
   font-size: var(--text-2xl);
   line-height: var(--tw-leading, var(--text-2xl--line-height));
   font-weight: 600;
@@ -136,12 +136,11 @@
   color: hsl(var(--muted-foreground));
 }
 
-@utility bg-hero_shape {
-  background-image: url("/hero/shape.svg");
-}
-
-@utility bg-hero_shape2 {
-  background-image: url("/hero/shape-2.svg");
+@utility section-title {
+  text-align: center;
+  font-size: var(--text-4xl);
+  line-height: var(--tw-leading, var(--text-4xl--line-height));
+  font-weight: 700;
 }
 
 .swiper-horizontal > .section-pagination-bullets .swiper-pagination-bullet,

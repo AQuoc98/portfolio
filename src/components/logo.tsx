@@ -5,11 +5,12 @@ const Logo = () => {
   return (
     <Link href="/">
       <Image
-        src="/logo.png"
-        width={100}
-        height={100}
+        src="/logo.webp"
+        width={3884}
+        height={2616}
         priority
         alt="logo"
+        className="h-16 w-auto"
       />
     </Link>
   );
